@@ -27,7 +27,7 @@ showTree rows =
   let
     l = A.length rows
   in
-    S.joinWith "\n" $ A.zipWith showLine (A.range l 0) rows
+    S.joinWith "\n" $ A.zipWith showLine (A.range (l - 1) 0) rows
   where
     showLine n es =
       let prefix = concat $ A.replicate n " "
@@ -53,3 +53,7 @@ showElem e =
 
 concat :: Array String -> String
 concat = S.joinWith ""
+
+elemLength :: Elem -> Int
+elemLength (Fur _ n) = n
+elemLength _ = 1

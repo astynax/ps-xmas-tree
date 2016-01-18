@@ -10,5 +10,5 @@ import Tree.Random
 
 main :: forall e. Eff (console :: CONSOLE, random :: RANDOM | e) Unit
 main = do
-  tree <- withHeight 2
+  tree <- withHeight 10
   log $ showTree tree
