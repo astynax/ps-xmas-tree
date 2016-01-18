@@ -5,7 +5,6 @@ import Control.Monad.Eff
 import Control.Monad.Eff.Random
 import qualified Data.Array as A
 import Data.Array.Unsafe (unsafeIndex)
-import Data.Maybe (fromMaybe)
 
 import Tree
 
@@ -20,7 +19,7 @@ withHeight 2 = (A.snoc) <$> withHeight 1 <*> r2
 withHeight n = (A.snoc) <$> withHeight (n - 1) <*> rElemsUpToLen (n * 2 - 1)
 
 
-choose :: forall e. Array _ -> Eff (random :: RANDOM | e) _
+choose :: forall e a. Array a -> Eff (random :: RANDOM | e) a
 choose xs = unsafeIndex xs <$> randomInt 0 (A.length xs - 1)
 
 
