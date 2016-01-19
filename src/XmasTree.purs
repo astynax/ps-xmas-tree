@@ -1,7 +1,4 @@
-module XmasTree
-  ( Tree(..), Elem(..), Direction(..), Decoration(..)
-  , showTree, showElem, elemLength
-  ) where
+module XmasTree where
 
 import Prelude
 import qualified Data.Array as A
@@ -36,6 +33,9 @@ showTree rows =
       let prefix = concat $ A.replicate n " "
       in concat $ A.cons prefix $ map showElem es
 
+    concat = S.joinWith ""
+
+
 showElem :: Elem -> String
 showElem e =
   case e of
@@ -53,9 +53,6 @@ showElem e =
              LeftToRight -> ">"
              RightToLeft -> "<"
 
-
-concat :: Array String -> String
-concat = S.joinWith ""
 
 elemLength :: Elem -> Int
 elemLength (Fur _ n) = n

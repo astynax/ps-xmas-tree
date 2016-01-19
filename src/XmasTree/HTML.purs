@@ -6,8 +6,6 @@ import Prelude
 import XmasTree
 
 type HTML = String
-type TagName = String
-type CssClass = String
 
 toHtml :: Tree -> HTML
 toHtml t = "<div class=\"pine\"><div class=\"pine-content\">"

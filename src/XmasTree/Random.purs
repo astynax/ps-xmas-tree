@@ -1,8 +1,8 @@
 module XmasTree.Random (withHeight) where
 
 import Prelude
-import Control.Monad.Eff
-import Control.Monad.Eff.Random
+import Control.Monad.Eff (Eff(..))
+import Control.Monad.Eff.Random (RANDOM(..), randomInt)
 import qualified Data.Array as A
 import Data.Array.Unsafe (unsafeIndex)
 
