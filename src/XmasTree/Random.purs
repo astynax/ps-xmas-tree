@@ -1,4 +1,4 @@
-module Tree.Random (withHeight) where
+module XmasTree.Random (withHeight) where
 
 import Prelude
 import Control.Monad.Eff
@@ -6,7 +6,7 @@ import Control.Monad.Eff.Random
 import qualified Data.Array as A
 import Data.Array.Unsafe (unsafeIndex)
 
-import Tree
+import XmasTree
 
 
 type RandomElem = forall e. Eff (random :: RANDOM | e) Elem

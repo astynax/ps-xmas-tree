@@ -1,4 +1,7 @@
-module Tree where
+module XmasTree
+  ( Tree(..), Elem(..), Direction(..), Decoration(..)
+  , showTree, showElem, elemLength
+  ) where
 
 import Prelude
 import qualified Data.Array as A

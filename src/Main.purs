@@ -4,11 +4,25 @@ import Prelude
 import Control.Monad.Eff
 import Control.Monad.Eff.Console
 import Control.Monad.Eff.Random
+import Data.Maybe
+import DOM
 
-import Tree
-import Tree.Random
+import Data.DOM.Simple.Element
+import Data.DOM.Simple.Window
 
-main :: forall e. Eff (console :: CONSOLE, random :: RANDOM | e) Unit
+import XmasTree.Random
+import XmasTree.HTML
+
+main :: forall e. Eff ( console :: CONSOLE
+                      , random :: RANDOM
+                      , dom :: DOM | e
+                      ) Unit
 main = do
-  tree <- withHeight 10
-  log $ showTree tree
+  doc <- document globalWindow
+  place <- querySelector "#pine-placeholder" doc
+  case place of
+    (Just el) ->
+      toHtml <$> withHeight 25
+             >>= (`setInnerHTML` el)
+    _ ->
+      error "Element with id=\"#pine-placeholder\" not found!"
