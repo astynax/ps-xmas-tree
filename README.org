@@ -1,8 +1,16 @@
 #+TITLE: PureScript povered Xmas tree
 
-* PureScript povered Xmas tree
-** Building & Browserification
+* About
+This repo contains a source for script which renders to HTML
+a randomized Xmas Tree similar to [[http://adventofcode.com/][one from here]].
+
+Script was written using PureScript and it uses a direct DOM
+manipulations to build a tree representation.
+
+* Building & Browserification
 #+BEGIN_SRC shell
   pulp dep update
   make
 #+END_SRC
+After the script was build you can open an ~index.html~ to see
+result.
