@@ -1,0 +1,8 @@
+#+TITLE: PureScript povered Xmas tree
+
+* PureScript povered Xmas tree
+** Building & Browserification
+#+BEGIN_SRC shell
+  pulp dep update
+  make
+#+END_SRC
